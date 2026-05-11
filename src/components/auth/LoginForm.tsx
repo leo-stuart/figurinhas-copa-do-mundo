@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { signIn, signUp } from '@/app/actions/auth'
 import { useRouter } from 'next/navigation'
 import { ArrowRight, Lock, Mail, UserPlus } from 'lucide-react'
+import Logo26 from '@/components/brand/Logo26'
 
 export default function LoginForm() {
   const router = useRouter()
@@ -34,16 +35,19 @@ export default function LoginForm() {
 
   return (
     <div className="auth-panel">
-      <div className="auth-brand">
-        <div className="brand-mark" aria-hidden="true">26</div>
-        <div className="campaign-kicker">NÓS SOMOS</div>
-        <h1 className="auth-title">FIFA World Cup 26</h1>
-        <p className="auth-subtitle">
-          Coleção Oficial de Figurinhas Panini
-        </p>
+      <div className="auth-brand-row">
+        <Logo26 size={56} showFifa={true} showTrophy={true} />
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="hero-kicker">A espera está quase no fim</div>
+      <h1 className="auth-title">
+        {mode === 'login' ? 'Entre no álbum' : 'Crie sua conta'}
+      </h1>
+      <p className="auth-subtitle">
+        Marque suas figurinhas, controle repetidas e acompanhe o progresso rumo às 48 nações da Copa do Mundo FIFA 26.
+      </p>
+
+      <form onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="email">Email</label>
           <div className="input-wrap">

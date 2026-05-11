@@ -4,6 +4,7 @@ import { signOut } from '@/app/actions/auth'
 import type { AlbumProgress } from '@/domain/entities/AlbumProgress'
 import { LogOut } from 'lucide-react'
 import FilterTabs from './FilterTabs'
+import Logo26 from '@/components/brand/Logo26'
 import type { Filter } from './AlbumClient'
 
 interface Props {
@@ -15,66 +16,55 @@ interface Props {
 
 export default function StatsHeader({ progress, filter, onFilterChange, userEmail }: Props) {
   return (
-    <header className="album-header">
-      <div className="album-header-inner">
-        <div className="album-header-main">
-          <div className="flex items-start justify-between gap-3">
-            <div className="brand-lockup">
-              <div className="brand-mark" aria-hidden="true">26</div>
-              <div className="min-w-0">
-                <div className="campaign-kicker">NÓS SOMOS</div>
-                <h1 className="brand-title">FIFA World Cup 26</h1>
-                <div className="brand-subtitle">Coleção Oficial de Figurinhas Panini</div>
-              </div>
-            </div>
+    <section className="album-hero">
+      <div className="hero-stripe" aria-hidden="true" />
 
-            <form action={signOut}>
-              <button
-                type="submit"
-                title={`Sair (${userEmail})`}
-                aria-label={`Sair (${userEmail})`}
-                className="icon-button"
-              >
-                <LogOut size={18} />
-              </button>
-            </form>
-          </div>
-
-          <div>
-            <div className="progress-panel" aria-label="Progresso do álbum">
-              <div className="progress-copy">
-                <div className="progress-label">
-                  <span>{progress.have} de {progress.total}</span>
-                  <span>{progress.missing} faltam</span>
-                </div>
-                <div className="progress-track">
-                  <div className="progress-fill" style={{ width: `${progress.percentage}%` }} />
-                </div>
-              </div>
-              <div className="progress-number">{progress.percentage}%</div>
-            </div>
-
-            <div className="stats-grid">
-              <StatBox label="Tenho" value={progress.have} tone="green" />
-              <StatBox label="Faltam" value={progress.missing} tone="red" />
-              <StatBox label="Repetidas" value={progress.duplicatesCount} tone="gold" />
+      <div className="album-hero-inner">
+        <div className="hero-bar">
+          <div className="hero-brand">
+            <Logo26 size={40} showFifa={false} showTrophy={true} />
+            <div className="hero-brand-text">
+              <span className="hero-brand-kicker">FIFA World Cup</span>
+              <span className="hero-brand-title">Álbum 26</span>
             </div>
           </div>
+
+          <div className="hero-stats" aria-label="Progresso">
+            <span className="hero-pct">{progress.percentage}<i>%</i></span>
+            <span className="hero-stat">
+              <b>{progress.have}</b>
+              <i>/{progress.total}</i>
+            </span>
+            <span className="hero-stat hero-stat--miss">
+              <b>{progress.missing}</b>
+              <i>faltam</i>
+            </span>
+            {progress.duplicatesCount > 0 && (
+              <span className="hero-stat hero-stat--dup">
+                <b>{progress.duplicatesCount}</b>
+                <i>reps</i>
+              </span>
+            )}
+          </div>
+
+          <form action={signOut}>
+            <button
+              type="submit"
+              title={`Sair (${userEmail})`}
+              aria-label={`Sair (${userEmail})`}
+              className="icon-button"
+            >
+              <LogOut size={18} />
+            </button>
+          </form>
+        </div>
+
+        <div className="hero-progress-track" aria-hidden="true">
+          <div className="hero-progress-fill" style={{ width: `${progress.percentage}%` }} />
         </div>
 
         <FilterTabs filter={filter} onFilterChange={onFilterChange} />
       </div>
-    </header>
-  )
-}
-
-function StatBox({ label, value, tone }: { label: string; value: number; tone: 'green' | 'red' | 'gold' }) {
-  const color = `var(--${tone})`
-
-  return (
-    <div className="stat-card">
-      <strong style={{ color }}>{value}</strong>
-      <span>{label}</span>
-    </div>
+    </section>
   )
 }

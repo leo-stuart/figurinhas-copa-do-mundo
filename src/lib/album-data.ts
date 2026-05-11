@@ -11,54 +11,54 @@ export interface AlbumGroup {
 }
 
 const TEAM_PRIMARY_COLORS: Record<string, string> = {
-  MEX: '#009B3A',
-  KOR: '#CC0000',
-  RSA: '#FEDF00',
-  CZE: '#003087',
-  CAN: '#D80621',
-  SUI: '#D80621',
-  QAT: '#7A1231',
-  BIH: '#1557A8',
-  BRA: '#009B3A',
-  MAR: '#CC0000',
-  HAI: '#1557A8',
-  SCO: '#003087',
-  USA: '#003087',
-  PAR: '#CC0000',
-  AUS: '#FEDF00',
-  TUR: '#D80621',
-  GER: '#111111',
-  CIV: '#009B3A',
-  ECU: '#FEDF00',
-  CUW: '#1557A8',
-  NED: '#F36C21',
-  JPN: '#D80621',
-  TUN: '#CC0000',
-  SWE: '#1557A8',
-  BEL: '#111111',
-  EGY: '#CC0000',
-  IRN: '#009B3A',
-  NZL: '#0A1E4A',
-  ESP: '#CC0000',
-  URU: '#89C8F5',
-  KSA: '#009B3A',
-  CPV: '#1557A8',
-  FRA: '#003087',
-  SEN: '#009B3A',
-  NOR: '#D80621',
-  IRQ: '#009B3A',
-  ARG: '#89C8F5',
-  ALG: '#009B3A',
-  AUT: '#D80621',
-  JOR: '#CC0000',
-  POR: '#009B3A',
-  COL: '#FEDF00',
-  UZB: '#1557A8',
-  COD: '#1557A8',
-  ENG: '#FFFFFF',
-  CRO: '#CC0000',
-  GHA: '#FEDF00',
-  PAN: '#D80621',
+  MEX: '#006847', // flag green
+  KOR: '#C60C30', // taegeuk red
+  RSA: '#007749', // flag green
+  CZE: '#11457E', // flag blue
+  CAN: '#D52B1E', // maple red
+  SUI: '#DA291C', // swiss red
+  QAT: '#8D1B3D', // qatari maroon
+  BIH: '#002F6C', // flag blue
+  BRA: '#009C3B', // verde-amarelo
+  MAR: '#C1272D', // moroccan red
+  HAI: '#00209F', // flag blue
+  SCO: '#005EB8', // royal blue
+  USA: '#002868', // old glory blue
+  PAR: '#D52B1C', // tricolor red
+  AUS: '#012169', // commonwealth blue
+  TUR: '#E30A17', // turkish red
+  GER: '#000000', // schwarz
+  CIV: '#F77F00', // flag orange
+  ECU: '#034EA2', // flag blue (yellow unreadable on white)
+  CUW: '#002868', // flag blue
+  NED: '#AE1C28', // dutch red (oranje is monarchy, flag is red-white-blue)
+  JPN: '#BC002D', // hinomaru red
+  TUN: '#E70013', // tunisian red
+  SWE: '#006AA7', // flag blue
+  BEL: '#000000', // belgian black (vertical band)
+  EGY: '#CE1126', // egyptian red
+  IRN: '#239F40', // iranian green
+  NZL: '#00247D', // flag dark blue
+  ESP: '#C60B1E', // spanish red
+  URU: '#0038A8', // uruguayan navy (sun + bands)
+  KSA: '#006C35', // saudi green
+  CPV: '#003893', // flag blue
+  FRA: '#002395', // tricolore blue
+  SEN: '#00853F', // senegalese green
+  NOR: '#BA0C2F', // norwegian red
+  IRQ: '#CE1126', // flag red
+  ARG: '#75AADB', // albiceleste blue
+  ALG: '#006233', // algerian green
+  AUT: '#C8102E', // austrian red
+  JOR: '#CE1126', // jordanian red
+  POR: '#006600', // portuguese green
+  COL: '#CE1126', // colombian red (legible)
+  UZB: '#0099B5', // flag blue
+  COD: '#007FFF', // congolese sky blue
+  ENG: '#CE1124', // st george red
+  CRO: '#FF0000', // croatian red
+  GHA: '#CE1126', // ghanaian red (legible)
+  PAN: '#D21034', // panamanian red
 }
 
 export const GROUPS: AlbumGroup[] = [
