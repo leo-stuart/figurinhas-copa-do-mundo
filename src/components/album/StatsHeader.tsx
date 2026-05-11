@@ -22,9 +22,9 @@ export default function StatsHeader({ progress, filter, onFilterChange, userEmai
             <div className="brand-lockup">
               <div className="brand-mark" aria-hidden="true">26</div>
               <div className="min-w-0">
-                <div className="campaign-kicker">WE ARE</div>
+                <div className="campaign-kicker">NÓS SOMOS</div>
                 <h1 className="brand-title">FIFA World Cup 26</h1>
-                <div className="brand-subtitle">Panini Official Sticker Collection</div>
+                <div className="brand-subtitle">Coleção Oficial de Figurinhas Panini</div>
               </div>
             </div>
 

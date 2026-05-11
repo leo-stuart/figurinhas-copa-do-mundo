@@ -84,7 +84,7 @@ function StickerTile({
 
   const stateClass = isDup ? 'dup' : have ? 'have' : ''
 
-  const stateLabel = isDup ? `${count} copies` : have ? 'Collected' : 'Missing'
+  const stateLabel = isDup ? `${count} cópias` : have ? 'Coletada' : 'Faltante'
   const [prefix] = code.split('_')
 
   return (

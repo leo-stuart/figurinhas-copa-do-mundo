@@ -36,7 +36,7 @@ function SpecialSection({ title, badge, codes, owned, filter, searchQuery, onTap
     <section className={`special-spread ${isCocaCola ? 'coke' : 'intro'}`} aria-label={title}>
       <div className="special-strip">
         <div>
-          <div className="campaign-kicker">WE ARE</div>
+          <div className="campaign-kicker">NÓS SOMOS</div>
           <h2 className="section-title">{title}</h2>
         </div>
         <span className="section-badge">{badge}</span>

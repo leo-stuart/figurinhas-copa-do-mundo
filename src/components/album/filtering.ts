@@ -11,6 +11,7 @@ export function teamMatchesQuery(team: Team, query: string): boolean {
   return [
     team.name,
     team.code,
+    `grupo ${team.group}`,
     `group ${team.group}`,
     team.group,
   ].some(value => value.toLowerCase().includes(q))

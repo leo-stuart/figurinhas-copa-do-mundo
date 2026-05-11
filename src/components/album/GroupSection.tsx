@@ -18,7 +18,7 @@ function GroupSection({ group, owned, filter, searchQuery, onTap, onLongPress }:
   const totalInGroup = allCodes.length
   const haveInGroup  = allCodes.filter(c => (owned.get(c) ?? 0) >= 1).length
   const query = normalizeQuery(searchQuery)
-  const groupQueryMatch = !query || `group ${group.letter}`.toLowerCase().includes(query) || group.letter.toLowerCase() === query
+  const groupQueryMatch = !query || `grupo ${group.letter}`.toLowerCase().includes(query) || `group ${group.letter}`.toLowerCase().includes(query) || group.letter.toLowerCase() === query
 
   const hasVisible = allCodes.some(c => {
     const count = owned.get(c) ?? 0
@@ -38,8 +38,8 @@ function GroupSection({ group, owned, filter, searchQuery, onTap, onLongPress }:
     <section className="group-spread" aria-label={`Grupo ${group.letter}`}>
       <div className="group-heading">
         <div>
-          <div className="campaign-kicker">GROUP</div>
-          <h2>Group {group.letter}</h2>
+          <div className="campaign-kicker">GRUPO</div>
+          <h2>Grupo {group.letter}</h2>
         </div>
         <span className="section-count">
           {haveInGroup}/{totalInGroup}

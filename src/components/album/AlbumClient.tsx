@@ -23,9 +23,9 @@ const progressUseCase = new GetAlbumProgress()
 const FWC_CODES = fwcCodes()
 const CC_CODES  = ccCodes()
 const SECTION_OPTIONS: { value: SectionFilter; label: string }[] = [
-  { value: 'all', label: 'All sections' },
-  { value: 'specials', label: 'Specials' },
-  ...GROUPS.map(group => ({ value: group.letter, label: `Group ${group.letter}` })),
+  { value: 'all', label: 'Todas as seções' },
+  { value: 'specials', label: 'Especiais' },
+  ...GROUPS.map(group => ({ value: group.letter, label: `Grupo ${group.letter}` })),
 ]
 
 export default function AlbumClient({ initialStickers, userEmail }: Props) {
@@ -67,7 +67,7 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
     return GROUPS.some(group => {
       if (sectionFilter !== 'all' && sectionFilter !== group.letter) return false
 
-      const groupMatch = !query || `group ${group.letter}`.toLowerCase().includes(query) || group.letter.toLowerCase() === query
+      const groupMatch = !query || `grupo ${group.letter}`.toLowerCase().includes(query) || `group ${group.letter}`.toLowerCase().includes(query) || group.letter.toLowerCase() === query
       return group.teams.some(team => {
         const teamMatch = groupMatch || teamMatchesQuery(team, query)
         return codesMatch(teamCodes(team.code), teamMatch)
@@ -228,13 +228,13 @@ function SelectionControls({
   onSearchQueryChange: (query: string) => void
 }) {
   return (
-    <div className="selection-controls" aria-label="Find stickers">
+    <div className="selection-controls" aria-label="Buscar figurinhas">
       <label className="search-field">
         <Search size={18} aria-hidden="true" />
         <input
           value={searchQuery}
           onChange={event => onSearchQueryChange(event.target.value)}
-          placeholder="Search team, code, group, sticker..."
+          placeholder="Buscar time, código, grupo, figurinha..."
           type="search"
         />
         {searchQuery && (
@@ -242,7 +242,7 @@ function SelectionControls({
             type="button"
             className="clear-search"
             onClick={() => onSearchQueryChange('')}
-            aria-label="Clear search"
+            aria-label="Limpar busca"
           >
             <X size={16} />
           </button>
@@ -253,7 +253,7 @@ function SelectionControls({
         className="section-select"
         value={sectionFilter}
         onChange={event => onSectionFilterChange(event.target.value as SectionFilter)}
-        aria-label="Filter by section"
+        aria-label="Filtrar por seção"
       >
         {SECTION_OPTIONS.map(option => (
           <option key={option.value} value={option.value}>{option.label}</option>
@@ -268,8 +268,8 @@ function EmptyForFilter({ filter, hasSelectionFilter }: { filter: Filter; hasSel
     return (
       <div className="empty-state">
         <SearchX size={34} strokeWidth={2} />
-        <strong>No matches</strong>
-        <p>Try a team name, group letter, country code, or sticker code like BRA_7.</p>
+        <strong>Sem resultados</strong>
+        <p>Tente o nome de um time, letra do grupo, código do país ou da figurinha como BRA_7.</p>
       </div>
     )
   }

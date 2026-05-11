@@ -36,10 +36,10 @@ export default function LoginForm() {
     <div className="auth-panel">
       <div className="auth-brand">
         <div className="brand-mark" aria-hidden="true">26</div>
-        <div className="campaign-kicker">WE ARE</div>
+        <div className="campaign-kicker">NÓS SOMOS</div>
         <h1 className="auth-title">FIFA World Cup 26</h1>
         <p className="auth-subtitle">
-          Panini Official Sticker Collection
+          Coleção Oficial de Figurinhas Panini
         </p>
       </div>
 

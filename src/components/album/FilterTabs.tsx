@@ -8,10 +8,10 @@ interface Props {
 }
 
 const TABS: { key: Filter; label: string }[] = [
-  { key: 'all',  label: 'Album'     },
-  { key: 'have', label: 'Collected' },
-  { key: 'miss', label: 'Missing'   },
-  { key: 'dup',  label: 'Dupes'     },
+  { key: 'all',  label: 'Álbum'      },
+  { key: 'have', label: 'Coletadas'  },
+  { key: 'miss', label: 'Faltantes'  },
+  { key: 'dup',  label: 'Repetidas'  },
 ]
 
 export default function FilterTabs({ filter, onFilterChange }: Props) {

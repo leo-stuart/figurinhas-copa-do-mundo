@@ -37,11 +37,11 @@ function TeamSection({ team, owned, filter, searchQuery, onTap, onLongPress }: P
     <article className="team-page" style={{ '--team-color': primaryColor, '--team-text': textColor } as CSSProperties}>
       <div className="team-strip">
         <div>
-          <div className="campaign-kicker">WE ARE</div>
+          <div className="campaign-kicker">NÓS SOMOS</div>
           <h3 className="country-name">{team.name}</h3>
           <div className="association-line">
             <span className="flag-box" aria-hidden="true">{team.flag}</span>
-            <span>{team.code} Football Association</span>
+            <span>Federação de Futebol {team.code}</span>
           </div>
         </div>
         <span className="team-count">
@@ -67,8 +67,8 @@ function TeamSection({ team, owned, filter, searchQuery, onTap, onLongPress }: P
           ))}
         </div>
         <div className="album-footer">
-          <span>Road to qualifying</span>
-          <span>Group {team.group} · {team.code}</span>
+          <span>Rumo à classificação</span>
+          <span>Grupo {team.group} · {team.code}</span>
         </div>
       </div>
     </article>
