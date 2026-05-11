@@ -1,8 +1,9 @@
 'use client'
 
+import Link from 'next/link'
 import { signOut } from '@/app/actions/auth'
 import type { AlbumProgress } from '@/domain/entities/AlbumProgress'
-import { LogOut } from 'lucide-react'
+import { LogOut, Users } from 'lucide-react'
 import FilterTabs from './FilterTabs'
 import type { Filter } from './AlbumClient'
 
@@ -45,16 +46,26 @@ export default function StatsHeader({ progress, filter, onFilterChange, userEmai
             )}
           </div>
 
-          <form action={signOut}>
-            <button
-              type="submit"
-              title={`Sair (${userEmail})`}
-              aria-label={`Sair (${userEmail})`}
+          <div className="hero-actions">
+            <Link
+              href="/friends"
               className="icon-button"
+              title="Amigos e trocas"
+              aria-label="Amigos e trocas"
             >
-              <LogOut size={18} />
-            </button>
-          </form>
+              <Users size={18} />
+            </Link>
+            <form action={signOut}>
+              <button
+                type="submit"
+                title={`Sair (${userEmail})`}
+                aria-label={`Sair (${userEmail})`}
+                className="icon-button"
+              >
+                <LogOut size={18} />
+              </button>
+            </form>
+          </div>
         </div>
 
         <div className="hero-progress-track" aria-hidden="true">

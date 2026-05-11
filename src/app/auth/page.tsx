@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import LoginForm from '@/components/auth/LoginForm'
 import Tunnel26 from '@/components/brand/Tunnel26'
 
@@ -18,7 +19,9 @@ export default function AuthPage() {
       </div>
 
       <div className="auth-form-wrap">
-        <LoginForm />
+        <Suspense fallback={null}>
+          <LoginForm />
+        </Suspense>
       </div>
     </main>
   )

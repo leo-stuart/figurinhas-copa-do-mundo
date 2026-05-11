@@ -2,12 +2,20 @@
 
 import { useState } from 'react'
 import { signIn, signUp } from '@/app/actions/auth'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { ArrowRight, Lock, Mail, UserPlus } from 'lucide-react'
 import Logo26 from '@/components/brand/Logo26'
 
+function safeReturn(raw: string | null): string {
+  if (!raw) return '/album'
+  if (!raw.startsWith('/') || raw.startsWith('//')) return '/album'
+  return raw
+}
+
 export default function LoginForm() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const returnTo = safeReturn(searchParams.get('return'))
   const [mode, setMode]       = useState<'login' | 'signup'>('login')
   const [email, setEmail]     = useState('')
   const [password, setPass]   = useState('')
@@ -24,7 +32,7 @@ export default function LoginForm() {
       } else {
         await signUp(email, password)
       }
-      router.push('/album')
+      router.push(returnTo)
       router.refresh()
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Erro desconhecido')
