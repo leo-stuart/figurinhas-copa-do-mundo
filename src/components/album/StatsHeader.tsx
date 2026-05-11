@@ -4,7 +4,6 @@ import { signOut } from '@/app/actions/auth'
 import type { AlbumProgress } from '@/domain/entities/AlbumProgress'
 import { LogOut } from 'lucide-react'
 import FilterTabs from './FilterTabs'
-import Logo26 from '@/components/brand/Logo26'
 import type { Filter } from './AlbumClient'
 
 interface Props {
@@ -22,7 +21,6 @@ export default function StatsHeader({ progress, filter, onFilterChange, userEmai
       <div className="album-hero-inner">
         <div className="hero-bar">
           <div className="hero-brand">
-            <Logo26 size={40} showFifa={false} showTrophy={true} />
             <div className="hero-brand-text">
               <span className="hero-brand-kicker">FIFA World Cup</span>
               <span className="hero-brand-title">Álbum 26</span>

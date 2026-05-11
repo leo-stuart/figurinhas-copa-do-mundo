@@ -268,12 +268,9 @@ button:disabled { cursor: not-allowed; }
 }
 
 .hero-brand-text {
-  display: none;
+  display: inline-flex;
   flex-direction: column;
   line-height: 1;
-}
-@media (min-width: 520px) {
-  .hero-brand-text { display: inline-flex; }
 }
 .hero-brand-kicker {
   font-family: var(--font-body);
