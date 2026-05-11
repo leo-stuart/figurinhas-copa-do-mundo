@@ -1,6 +1,6 @@
 .next
 .env.local
-supabase
+/supabase
 node_modules
 .claude
 .env.local.example
