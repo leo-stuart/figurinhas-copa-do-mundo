@@ -85,7 +85,7 @@ function StickerTile({
   const stateClass = isDup ? 'dup' : have ? 'have' : ''
 
   const stateLabel = isDup ? `${count} cópias` : have ? 'Coletada' : 'Faltante'
-  const [prefix] = code.split('_')
+  const [prefix, suffix] = code.split('_')
 
   return (
     <button
@@ -102,7 +102,7 @@ function StickerTile({
       <span className="sticker-status" aria-hidden="true">
         {have ? <Check size={18} strokeWidth={3} /> : null}
       </span>
-      <span className="s-num">{num}</span>
+      <span className="s-num">{suffix}</span>
       <span className="sticker-label">
         <strong>{prefix}</strong>
         <small>{stateLabel}</small>

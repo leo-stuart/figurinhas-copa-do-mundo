@@ -142,7 +142,7 @@ export const TEAM_STICKER_COUNT = 20
 export const TOTAL_STICKERS = FWC_COUNT + GROUPS.reduce((s, g) => s + g.teams.length * TEAM_STICKER_COUNT, 0) + CC_COUNT
 
 export function fwcCodes(): string[] {
-  return Array.from({ length: FWC_COUNT }, (_, i) => `FWC_${i + 1}`)
+  return ['FWC_00', ...Array.from({ length: FWC_COUNT - 1 }, (_, i) => `FWC_${i + 1}`)]
 }
 
 export function ccCodes(): string[] {

@@ -47,11 +47,11 @@ function SpecialSection({ title, badge, codes, owned, filter, searchQuery, onTap
 
       <div className="special-body">
         <div className="sticker-grid special-grid">
-        {codes.map((code, i) => (
+        {codes.map(code => (
           <StickerTile
             key={code}
             code={code}
-            num={i + 1}
+            num={Number(code.split('_')[1] ?? 0)}
             count={owned.get(code) ?? 0}
             filter={filter}
             accentColor={accentColor}
