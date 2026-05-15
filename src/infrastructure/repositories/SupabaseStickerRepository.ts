@@ -22,6 +22,18 @@ export class SupabaseStickerRepository implements IStickerRepository {
     }))
   }
 
+  async getStickerCount(userId: string, stickerCode: string): Promise<number> {
+    const { data, error } = await this.supabase
+      .from('user_stickers')
+      .select('count')
+      .eq('user_id', userId)
+      .eq('sticker_code', stickerCode)
+      .maybeSingle()
+
+    if (error) throw error
+    return data?.count ?? 0
+  }
+
   async upsertStickerCount(userId: string, stickerCode: string, count: number): Promise<UserSticker> {
     const { data, error } = await this.supabase
       .from('user_stickers')
@@ -48,6 +60,15 @@ export class SupabaseStickerRepository implements IStickerRepository {
       .delete()
       .eq('user_id', userId)
       .eq('sticker_code', stickerCode)
+
+    if (error) throw error
+  }
+
+  async deleteAllForUser(userId: string): Promise<void> {
+    const { error } = await this.supabase
+      .from('user_stickers')
+      .delete()
+      .eq('user_id', userId)
 
     if (error) throw error
   }

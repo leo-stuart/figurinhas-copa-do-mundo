@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useTransition, useMemo } from 'react'
 import { CircleCheckBig, Layers, PackageOpen, Search, SearchX, Trash2, X } from 'lucide-react'
-import { updateStickerCount } from '@/app/actions/stickers'
+import { resetAllStickers, updateStickerCount } from '@/app/actions/stickers'
 import { GROUPS, TOTAL_STICKERS, fwcCodes, ccCodes, teamCodes } from '@/lib/album-data'
 import { GetAlbumProgress } from '@/domain/usecases/GetAlbumProgress'
 import StatsHeader from './StatsHeader'
@@ -93,6 +93,22 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
     })
   }, [])
 
+  const handleResetAll = useCallback(() => {
+    if (progress.have === 0) return
+    if (!window.confirm('Tem certeza? Isso vai apagar TODAS as figurinhas marcadas. Esta ação não pode ser desfeita.')) return
+
+    const snapshot = owned
+    setOwned({})
+
+    startTransition(async () => {
+      try {
+        await resetAllStickers()
+      } catch {
+        setOwned(snapshot)
+      }
+    })
+  }, [owned, progress.have])
+
   const handleRemoveDuplicates = useCallback(() => {
     if (duplicateCodes.length === 0) return
 
@@ -146,6 +162,24 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
           onSectionFilterChange={setSectionFilter}
           onSearchQueryChange={setSearchQuery}
         />
+
+        {filter === 'have' && progress.have > 0 && (
+          <div className="duplicate-action">
+            <div>
+              <strong>{progress.have} figurinhas marcadas</strong>
+              <span>Apaga toda a coleção e volta tudo para zero</span>
+            </div>
+            <button
+              type="button"
+              className="danger-button"
+              onClick={handleResetAll}
+              disabled={isPending}
+            >
+              <Trash2 size={17} />
+              Remover todas
+            </button>
+          </div>
+        )}
 
         {filter === 'dup' && progress.duplicatesCount > 0 && (
           <div className="duplicate-action">

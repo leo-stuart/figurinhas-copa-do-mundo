@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { signOut } from '@/app/actions/auth'
 import type { AlbumProgress } from '@/domain/entities/AlbumProgress'
-import { LogOut, Users } from 'lucide-react'
+import { History, LogOut, Users } from 'lucide-react'
 import FilterTabs from './FilterTabs'
 import type { Filter } from './AlbumClient'
 
@@ -47,6 +47,14 @@ export default function StatsHeader({ progress, filter, onFilterChange, userEmai
           </div>
 
           <div className="hero-actions">
+            <Link
+              href="/history"
+              className="icon-button"
+              title="Histórico"
+              aria-label="Histórico"
+            >
+              <History size={18} />
+            </Link>
             <Link
               href="/friends"
               className="icon-button"
