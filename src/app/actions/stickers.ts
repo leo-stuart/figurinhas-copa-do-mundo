@@ -10,15 +10,24 @@ import { GetStickerHistory } from '@/domain/usecases/GetStickerHistory'
 import { ResetAllStickers } from '@/domain/usecases/ResetAllStickers'
 import type { StickerHistoryEntry } from '@/domain/entities/StickerHistoryEntry'
 
-export async function updateStickerCount(stickerCode: string, count: number) {
-  const supabase = await createClient()
-  const { data, error } = await supabase.auth.getClaims()
-  if (error || !data?.claims) throw new Error('Not authenticated')
+export async function updateStickerCount(
+  stickerCode: string,
+  count: number,
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  try {
+    const supabase = await createClient()
+    const { data, error } = await supabase.auth.getClaims()
+    if (error || !data?.claims) return { ok: false, error: 'Not authenticated' }
 
-  const repo = new SupabaseStickerRepository(supabase)
-  const historyRepo = new SupabaseStickerHistoryRepository(supabase)
-  const useCase = new UpdateStickerCount(repo, historyRepo)
-  return useCase.execute(data.claims.sub, stickerCode, count)
+    const repo = new SupabaseStickerRepository(supabase)
+    const historyRepo = new SupabaseStickerHistoryRepository(supabase)
+    const useCase = new UpdateStickerCount(repo, historyRepo)
+    await useCase.execute(data.claims.sub, stickerCode, count)
+    return { ok: true }
+  } catch (err) {
+    console.error('[updateStickerCount] failed', { stickerCode, count, err })
+    return { ok: false, error: err instanceof Error ? err.message : 'Unknown error' }
+  }
 }
 
 export async function getUserStickers(): Promise<Record<string, number>> {
@@ -44,18 +53,25 @@ export async function getStickerHistory(
   return useCase.execute(data.claims.sub, pageSize, page * pageSize)
 }
 
-export async function resetAllStickers(): Promise<{ resetCount: number }> {
-  const supabase = await createClient()
-  const { data, error } = await supabase.auth.getClaims()
-  if (error || !data?.claims) throw new Error('Not authenticated')
+export async function resetAllStickers(): Promise<
+  { ok: true; resetCount: number } | { ok: false; error: string }
+> {
+  try {
+    const supabase = await createClient()
+    const { data, error } = await supabase.auth.getClaims()
+    if (error || !data?.claims) return { ok: false, error: 'Not authenticated' }
 
-  const repo = new SupabaseStickerRepository(supabase)
-  const historyRepo = new SupabaseStickerHistoryRepository(supabase)
-  const useCase = new ResetAllStickers(repo, historyRepo)
-  const result = await useCase.execute(data.claims.sub)
+    const repo = new SupabaseStickerRepository(supabase)
+    const historyRepo = new SupabaseStickerHistoryRepository(supabase)
+    const useCase = new ResetAllStickers(repo, historyRepo)
+    const result = await useCase.execute(data.claims.sub)
 
-  revalidatePath('/album')
-  revalidatePath('/history')
+    revalidatePath('/album')
+    revalidatePath('/history')
 
-  return result
+    return { ok: true, resetCount: result.resetCount }
+  } catch (err) {
+    console.error('[resetAllStickers] failed', err)
+    return { ok: false, error: err instanceof Error ? err.message : 'Unknown error' }
+  }
 }

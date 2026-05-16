@@ -75,23 +75,32 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
     })
   }, [filter, ownedMap, query, sectionFilter])
 
+  const revert = useCallback((code: string, previousCount: number) => {
+    setOwned(o => {
+      const s = { ...o }
+      if (previousCount <= 0) delete s[code]
+      else s[code] = previousCount
+      return s
+    })
+  }, [])
+
   const handleTap = useCallback((code: string, currentCount: number) => {
     const next = currentCount + 1
     setOwned(o => ({ ...o, [code]: next }))
 
     startTransition(async () => {
       try {
-        await updateStickerCount(code, next)
-      } catch {
-        setOwned(o => {
-          const s = { ...o }
-          if (currentCount <= 0) delete s[code]
-          else s[code] = currentCount
-          return s
-        })
+        const result = await updateStickerCount(code, next)
+        if (!result.ok) {
+          console.error('[handleTap] server error:', result.error)
+          revert(code, currentCount)
+        }
+      } catch (err) {
+        console.error('[handleTap] network error:', err)
+        revert(code, currentCount)
       }
     })
-  }, [])
+  }, [revert])
 
   const handleResetAll = useCallback(() => {
     if (progress.have === 0) return
@@ -102,8 +111,13 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
 
     startTransition(async () => {
       try {
-        await resetAllStickers()
-      } catch {
+        const result = await resetAllStickers()
+        if (!result.ok) {
+          console.error('[handleResetAll] server error:', result.error)
+          setOwned(snapshot)
+        }
+      } catch (err) {
+        console.error('[handleResetAll] network error:', err)
         setOwned(snapshot)
       }
     })
@@ -121,8 +135,13 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
 
     startTransition(async () => {
       try {
-        await Promise.all(duplicateCodes.map(code => updateStickerCount(code, 1)))
-      } catch {
+        const results = await Promise.all(duplicateCodes.map(code => updateStickerCount(code, 1)))
+        if (results.some(r => !r.ok)) {
+          console.error('[handleRemoveDuplicates] partial failure')
+          setOwned(snapshot)
+        }
+      } catch (err) {
+        console.error('[handleRemoveDuplicates] network error:', err)
         setOwned(snapshot)
       }
     })
@@ -139,9 +158,10 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
 
     startTransition(async () => {
       try {
-        await updateStickerCount(code, count)
-      } catch {
-        // silent fail — UI already updated, will reconcile on next load
+        const result = await updateStickerCount(code, count)
+        if (!result.ok) console.error('[handleSheetUpdate] server error:', result.error)
+      } catch (err) {
+        console.error('[handleSheetUpdate] network error:', err)
       }
     })
   }, [])

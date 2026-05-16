@@ -38,13 +38,12 @@ function StickerTile({
 
   const matchesSearch = forceVisibleForSearch || stickerMatchesQuery(code, num, searchQuery)
 
-  const lpTimer    = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
-  const lpFired    = useRef(false)
-  const moved      = useRef(false)
-  const lastTouch  = useRef(0)
+  const lpTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const lpFired = useRef(false)
+  const moved   = useRef(false)
 
-  const handleTouchStart = useCallback(() => {
-    moved.current  = false
+  const handlePointerDown = useCallback(() => {
+    moved.current = false
     lpFired.current = false
     lpTimer.current = setTimeout(() => {
       lpFired.current = true
@@ -55,24 +54,23 @@ function StickerTile({
     }, 500)
   }, [code, onLongPress])
 
-  const handleTouchMove = useCallback(() => {
+  const handlePointerMove = useCallback(() => {
     moved.current = true
     clearTimeout(lpTimer.current)
   }, [])
 
-  const handleTouchEnd = useCallback(() => {
-    lastTouch.current = Date.now()
+  const handlePointerCancel = useCallback(() => {
+    clearTimeout(lpTimer.current)
+    lpFired.current = false
+  }, [])
+
+  const handlePointerUp = useCallback(() => {
     clearTimeout(lpTimer.current)
     if (!lpFired.current && !moved.current) {
       navigator.vibrate?.(count === 0 ? 30 : 15)
       onTap(code, count)
     }
     lpFired.current = false
-  }, [code, count, onTap])
-
-  const handleClick = useCallback(() => {
-    if (Date.now() - lastTouch.current < 400) return
-    onTap(code, count)
   }, [code, count, onTap])
 
   const handleContextMenu = useCallback((e: React.MouseEvent) => {
@@ -93,10 +91,10 @@ function StickerTile({
       className={`sticker-tile ${stateClass}`}
       style={{ '--card-tint': accentColor } as CSSProperties}
       aria-label={`${code}, ${stateLabel}`}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onClick={handleClick}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerCancel={handlePointerCancel}
+      onPointerUp={handlePointerUp}
       onContextMenu={handleContextMenu}
     >
       <span className="sticker-status" aria-hidden="true">
