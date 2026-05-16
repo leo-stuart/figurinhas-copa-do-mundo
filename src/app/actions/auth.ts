@@ -3,16 +3,18 @@
 import { createClient } from '@/infrastructure/supabase/server'
 import { redirect } from 'next/navigation'
 
-export async function signIn(email: string, password: string) {
+export async function signIn(email: string, password: string): Promise<{ error?: string }> {
   const supabase = await createClient()
   const { error } = await supabase.auth.signInWithPassword({ email, password })
-  if (error) throw new Error(error.message)
+  if (error) return { error: error.message }
+  return {}
 }
 
-export async function signUp(email: string, password: string) {
+export async function signUp(email: string, password: string): Promise<{ error?: string }> {
   const supabase = await createClient()
   const { error } = await supabase.auth.signUp({ email, password })
-  if (error) throw new Error(error.message)
+  if (error) return { error: error.message }
+  return {}
 }
 
 export async function signOut() {

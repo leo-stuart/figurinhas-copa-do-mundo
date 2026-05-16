@@ -1,0 +1,77 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]:
+        - generic:
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+          - generic:
+            - generic: "2"
+            - generic: "6"
+      - generic [ref=e5]: We Are 26
+    - generic [ref=e7]:
+      - generic [ref=e9]:
+        - generic "26" [ref=e10]:
+          - generic [ref=e11]: "2"
+          - generic [ref=e12]: "6"
+        - generic [ref=e13]:
+          - generic [ref=e14]: FIFA
+          - generic [ref=e15]: Official Licensed Product
+      - generic [ref=e16]: A espera está quase no fim
+      - heading "Entre no álbum" [level=1] [ref=e17]
+      - paragraph [ref=e18]: Marque suas figurinhas, controle repetidas e acompanhe o progresso rumo às 48 nações da Copa do Mundo FIFA 26.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Email
+          - generic [ref=e22]:
+            - img [ref=e23]
+            - textbox "Email" [ref=e26]:
+              - /placeholder: seu@email.com
+              - text: diagtest+1@example.com
+        - generic [ref=e27]:
+          - generic [ref=e28]: Senha
+          - generic [ref=e29]:
+            - img [ref=e30]
+            - textbox "Senha" [ref=e33]:
+              - /placeholder: ••••••••
+              - text: test123456
+        - button "Entrar" [ref=e34] [cursor=pointer]:
+          - text: Entrar
+          - img [ref=e49]
+        - button "Não tem conta? Criar agora" [ref=e37] [cursor=pointer]
+  - status [ref=e51]:
+    - generic [ref=e52]:
+      - img [ref=e54]
+      - generic [ref=e56]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e57] [cursor=pointer]:
+          - img [ref=e58]
+  - alert [ref=e48]

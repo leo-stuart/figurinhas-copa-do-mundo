@@ -27,10 +27,12 @@ export default function LoginForm() {
     setLoading(true)
     setError('')
     try {
-      if (mode === 'login') {
-        await signIn(email, password)
-      } else {
-        await signUp(email, password)
+      const result = mode === 'login'
+        ? await signIn(email, password)
+        : await signUp(email, password)
+      if (result.error) {
+        setError(result.error)
+        return
       }
       router.push(returnTo)
       router.refresh()

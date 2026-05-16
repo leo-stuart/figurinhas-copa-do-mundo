@@ -1,0 +1,807 @@
+- generic [ref=e1]:
+  - status [ref=e910]:
+    - generic [ref=e911]:
+      - img [ref=e913]
+      - generic [ref=e915]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e916] [cursor=pointer]:
+          - img [ref=e917]
+  - alert [ref=e48]
+  - generic [ref=e61]:
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e67]:
+          - generic [ref=e68]: FIFA World Cup
+          - generic [ref=e69]: Álbum 26
+        - generic "Progresso" [ref=e70]:
+          - generic [ref=e71]: 0%
+          - generic [ref=e72]:
+            - generic [ref=e73]: "1"
+            - generic [ref=e74]: /994
+          - generic [ref=e75]:
+            - generic [ref=e76]: "993"
+            - generic [ref=e77]: faltam
+        - generic [ref=e78]:
+          - link "Histórico" [ref=e79] [cursor=pointer]:
+            - /url: /history
+            - img [ref=e80]
+          - link "Amigos e trocas" [ref=e84] [cursor=pointer]:
+            - /url: /friends
+            - img [ref=e85]
+          - button "Sair (diagtest+1@example.com)" [ref=e91] [cursor=pointer]:
+            - img [ref=e92]
+      - tablist "Filtros do álbum" [ref=e96]:
+        - tab "Álbum" [selected] [ref=e97] [cursor=pointer]
+        - tab "Coletadas" [ref=e98] [cursor=pointer]
+        - tab "Faltantes" [ref=e99] [cursor=pointer]
+        - tab "Repetidas" [ref=e100] [cursor=pointer]
+    - main [ref=e101]:
+      - generic "Buscar figurinhas" [ref=e102]:
+        - generic [ref=e103]:
+          - img [ref=e104]
+          - searchbox [ref=e107]
+        - combobox "Filtrar por seção" [ref=e108]:
+          - option "Todas as seções" [selected]
+          - option "Especiais"
+          - option "Grupo A"
+          - option "Grupo B"
+          - option "Grupo C"
+          - option "Grupo D"
+          - option "Grupo E"
+          - option "Grupo F"
+          - option "Grupo G"
+          - option "Grupo H"
+          - option "Grupo I"
+          - option "Grupo J"
+          - option "Grupo K"
+          - option "Grupo L"
+      - region "FWC — Introdução" [ref=e109]:
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - generic [ref=e112]: NÓS SOMOS
+            - heading "FWC — Introdução" [level=2] [ref=e113]
+          - generic [ref=e114]: ESPECIAL
+          - generic [ref=e115]: 1/20
+        - generic [ref=e117]:
+          - button "FWC_00, Faltante" [ref=e118] [cursor=pointer]:
+            - generic: "00"
+            - generic [ref=e120]:
+              - strong [ref=e121]: FWC
+              - generic [ref=e122]: Faltante
+          - button "FWC_1, Coletada" [active] [ref=e920] [cursor=pointer]:
+            - img [ref=e921]
+            - generic: "1"
+            - generic [ref=e125]:
+              - strong [ref=e126]: FWC
+              - generic [ref=e127]: Coletada
+          - button "FWC_2, Faltante" [ref=e128] [cursor=pointer]:
+            - generic: "2"
+            - generic [ref=e130]:
+              - strong [ref=e131]: FWC
+              - generic [ref=e132]: Faltante
+          - button "FWC_3, Faltante" [ref=e133] [cursor=pointer]:
+            - generic: "3"
+            - generic [ref=e135]:
+              - strong [ref=e136]: FWC
+              - generic [ref=e137]: Faltante
+          - button "FWC_4, Faltante" [ref=e138] [cursor=pointer]:
+            - generic: "4"
+            - generic [ref=e140]:
+              - strong [ref=e141]: FWC
+              - generic [ref=e142]: Faltante
+          - button "FWC_5, Faltante" [ref=e143] [cursor=pointer]:
+            - generic: "5"
+            - generic [ref=e145]:
+              - strong [ref=e146]: FWC
+              - generic [ref=e147]: Faltante
+          - button "FWC_6, Faltante" [ref=e148] [cursor=pointer]:
+            - generic: "6"
+            - generic [ref=e150]:
+              - strong [ref=e151]: FWC
+              - generic [ref=e152]: Faltante
+          - button "FWC_7, Faltante" [ref=e153] [cursor=pointer]:
+            - generic: "7"
+            - generic [ref=e155]:
+              - strong [ref=e156]: FWC
+              - generic [ref=e157]: Faltante
+          - button "FWC_8, Faltante" [ref=e158] [cursor=pointer]:
+            - generic: "8"
+            - generic [ref=e160]:
+              - strong [ref=e161]: FWC
+              - generic [ref=e162]: Faltante
+          - button "FWC_9, Faltante" [ref=e163] [cursor=pointer]:
+            - generic: "9"
+            - generic [ref=e165]:
+              - strong [ref=e166]: FWC
+              - generic [ref=e167]: Faltante
+          - button "FWC_10, Faltante" [ref=e168] [cursor=pointer]:
+            - generic: "10"
+            - generic [ref=e170]:
+              - strong [ref=e171]: FWC
+              - generic [ref=e172]: Faltante
+          - button "FWC_11, Faltante" [ref=e173] [cursor=pointer]:
+            - generic: "11"
+            - generic [ref=e175]:
+              - strong [ref=e176]: FWC
+              - generic [ref=e177]: Faltante
+          - button "FWC_12, Faltante" [ref=e178] [cursor=pointer]:
+            - generic: "12"
+            - generic [ref=e180]:
+              - strong [ref=e181]: FWC
+              - generic [ref=e182]: Faltante
+          - button "FWC_13, Faltante" [ref=e183] [cursor=pointer]:
+            - generic: "13"
+            - generic [ref=e185]:
+              - strong [ref=e186]: FWC
+              - generic [ref=e187]: Faltante
+          - button "FWC_14, Faltante" [ref=e188] [cursor=pointer]:
+            - generic: "14"
+            - generic [ref=e190]:
+              - strong [ref=e191]: FWC
+              - generic [ref=e192]: Faltante
+          - button "FWC_15, Faltante" [ref=e193] [cursor=pointer]:
+            - generic: "15"
+            - generic [ref=e195]:
+              - strong [ref=e196]: FWC
+              - generic [ref=e197]: Faltante
+          - button "FWC_16, Faltante" [ref=e198] [cursor=pointer]:
+            - generic: "16"
+            - generic [ref=e200]:
+              - strong [ref=e201]: FWC
+              - generic [ref=e202]: Faltante
+          - button "FWC_17, Faltante" [ref=e203] [cursor=pointer]:
+            - generic: "17"
+            - generic [ref=e205]:
+              - strong [ref=e206]: FWC
+              - generic [ref=e207]: Faltante
+          - button "FWC_18, Faltante" [ref=e208] [cursor=pointer]:
+            - generic: "18"
+            - generic [ref=e210]:
+              - strong [ref=e211]: FWC
+              - generic [ref=e212]: Faltante
+          - button "FWC_19, Faltante" [ref=e213] [cursor=pointer]:
+            - generic: "19"
+            - generic [ref=e215]:
+              - strong [ref=e216]: FWC
+              - generic [ref=e217]: Faltante
+      - region "Grupo A" [ref=e218]:
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - generic [ref=e221]: GRUPO
+            - heading "Grupo A" [level=2] [ref=e222]
+          - generic [ref=e223]: 0/80
+        - article [ref=e224]:
+          - button "MEX México 0/20" [ref=e225] [cursor=pointer]:
+            - generic [ref=e226]:
+              - generic [ref=e227]: 🇲🇽
+              - generic [ref=e228]:
+                - generic [ref=e229]: MEX
+                - generic [ref=e230]: México
+            - generic [ref=e231]:
+              - generic [ref=e232]: 0/20
+              - img [ref=e233]
+        - article [ref=e235]:
+          - button "KOR Coreia do Sul 0/20" [ref=e236] [cursor=pointer]:
+            - generic [ref=e237]:
+              - generic [ref=e238]: 🇰🇷
+              - generic [ref=e239]:
+                - generic [ref=e240]: KOR
+                - generic [ref=e241]: Coreia do Sul
+            - generic [ref=e242]:
+              - generic [ref=e243]: 0/20
+              - img [ref=e244]
+        - article [ref=e246]:
+          - button "RSA África do Sul 0/20" [ref=e247] [cursor=pointer]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: 🇿🇦
+              - generic [ref=e250]:
+                - generic [ref=e251]: RSA
+                - generic [ref=e252]: África do Sul
+            - generic [ref=e253]:
+              - generic [ref=e254]: 0/20
+              - img [ref=e255]
+        - article [ref=e257]:
+          - button "CZE Tchéquia 0/20" [ref=e258] [cursor=pointer]:
+            - generic [ref=e259]:
+              - generic [ref=e260]: 🇨🇿
+              - generic [ref=e261]:
+                - generic [ref=e262]: CZE
+                - generic [ref=e263]: Tchéquia
+            - generic [ref=e264]:
+              - generic [ref=e265]: 0/20
+              - img [ref=e266]
+      - region "Grupo B" [ref=e268]:
+        - generic [ref=e269]:
+          - generic [ref=e270]:
+            - generic [ref=e271]: GRUPO
+            - heading "Grupo B" [level=2] [ref=e272]
+          - generic [ref=e273]: 0/80
+        - article [ref=e274]:
+          - button "CAN Canadá 0/20" [ref=e275] [cursor=pointer]:
+            - generic [ref=e276]:
+              - generic [ref=e277]: 🇨🇦
+              - generic [ref=e278]:
+                - generic [ref=e279]: CAN
+                - generic [ref=e280]: Canadá
+            - generic [ref=e281]:
+              - generic [ref=e282]: 0/20
+              - img [ref=e283]
+        - article [ref=e285]:
+          - button "SUI Suíça 0/20" [ref=e286] [cursor=pointer]:
+            - generic [ref=e287]:
+              - generic [ref=e288]: 🇨🇭
+              - generic [ref=e289]:
+                - generic [ref=e290]: SUI
+                - generic [ref=e291]: Suíça
+            - generic [ref=e292]:
+              - generic [ref=e293]: 0/20
+              - img [ref=e294]
+        - article [ref=e296]:
+          - button "QAT Catar 0/20" [ref=e297] [cursor=pointer]:
+            - generic [ref=e298]:
+              - generic [ref=e299]: 🇶🇦
+              - generic [ref=e300]:
+                - generic [ref=e301]: QAT
+                - generic [ref=e302]: Catar
+            - generic [ref=e303]:
+              - generic [ref=e304]: 0/20
+              - img [ref=e305]
+        - article [ref=e307]:
+          - button "BIH Bósnia-Herzegovina 0/20" [ref=e308] [cursor=pointer]:
+            - generic [ref=e309]:
+              - generic [ref=e310]: 🇧🇦
+              - generic [ref=e311]:
+                - generic [ref=e312]: BIH
+                - generic [ref=e313]: Bósnia-Herzegovina
+            - generic [ref=e314]:
+              - generic [ref=e315]: 0/20
+              - img [ref=e316]
+      - region "Grupo C" [ref=e318]:
+        - generic [ref=e319]:
+          - generic [ref=e320]:
+            - generic [ref=e321]: GRUPO
+            - heading "Grupo C" [level=2] [ref=e322]
+          - generic [ref=e323]: 0/80
+        - article [ref=e324]:
+          - button "BRA Brasil 0/20" [ref=e325] [cursor=pointer]:
+            - generic [ref=e326]:
+              - generic [ref=e327]: 🇧🇷
+              - generic [ref=e328]:
+                - generic [ref=e329]: BRA
+                - generic [ref=e330]: Brasil
+            - generic [ref=e331]:
+              - generic [ref=e332]: 0/20
+              - img [ref=e333]
+        - article [ref=e335]:
+          - button "MAR Marrocos 0/20" [ref=e336] [cursor=pointer]:
+            - generic [ref=e337]:
+              - generic [ref=e338]: 🇲🇦
+              - generic [ref=e339]:
+                - generic [ref=e340]: MAR
+                - generic [ref=e341]: Marrocos
+            - generic [ref=e342]:
+              - generic [ref=e343]: 0/20
+              - img [ref=e344]
+        - article [ref=e346]:
+          - button "HAI Haiti 0/20" [ref=e347] [cursor=pointer]:
+            - generic [ref=e348]:
+              - generic [ref=e349]: 🇭🇹
+              - generic [ref=e350]:
+                - generic [ref=e351]: HAI
+                - generic [ref=e352]: Haiti
+            - generic [ref=e353]:
+              - generic [ref=e354]: 0/20
+              - img [ref=e355]
+        - article [ref=e357]:
+          - button "SCO Escócia 0/20" [ref=e358] [cursor=pointer]:
+            - generic [ref=e359]:
+              - generic [ref=e360]: 🏴󠁧󠁢󠁳󠁣󠁴󠁿
+              - generic [ref=e361]:
+                - generic [ref=e362]: SCO
+                - generic [ref=e363]: Escócia
+            - generic [ref=e364]:
+              - generic [ref=e365]: 0/20
+              - img [ref=e366]
+      - region "Grupo D" [ref=e368]:
+        - generic [ref=e369]:
+          - generic [ref=e370]:
+            - generic [ref=e371]: GRUPO
+            - heading "Grupo D" [level=2] [ref=e372]
+          - generic [ref=e373]: 0/80
+        - article [ref=e374]:
+          - button "USA Estados Unidos 0/20" [ref=e375] [cursor=pointer]:
+            - generic [ref=e376]:
+              - generic [ref=e377]: 🇺🇸
+              - generic [ref=e378]:
+                - generic [ref=e379]: USA
+                - generic [ref=e380]: Estados Unidos
+            - generic [ref=e381]:
+              - generic [ref=e382]: 0/20
+              - img [ref=e383]
+        - article [ref=e385]:
+          - button "PAR Paraguai 0/20" [ref=e386] [cursor=pointer]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: 🇵🇾
+              - generic [ref=e389]:
+                - generic [ref=e390]: PAR
+                - generic [ref=e391]: Paraguai
+            - generic [ref=e392]:
+              - generic [ref=e393]: 0/20
+              - img [ref=e394]
+        - article [ref=e396]:
+          - button "AUS Austrália 0/20" [ref=e397] [cursor=pointer]:
+            - generic [ref=e398]:
+              - generic [ref=e399]: 🇦🇺
+              - generic [ref=e400]:
+                - generic [ref=e401]: AUS
+                - generic [ref=e402]: Austrália
+            - generic [ref=e403]:
+              - generic [ref=e404]: 0/20
+              - img [ref=e405]
+        - article [ref=e407]:
+          - button "TUR Turquia 0/20" [ref=e408] [cursor=pointer]:
+            - generic [ref=e409]:
+              - generic [ref=e410]: 🇹🇷
+              - generic [ref=e411]:
+                - generic [ref=e412]: TUR
+                - generic [ref=e413]: Turquia
+            - generic [ref=e414]:
+              - generic [ref=e415]: 0/20
+              - img [ref=e416]
+      - region "Grupo E" [ref=e418]:
+        - generic [ref=e419]:
+          - generic [ref=e420]:
+            - generic [ref=e421]: GRUPO
+            - heading "Grupo E" [level=2] [ref=e422]
+          - generic [ref=e423]: 0/80
+        - article [ref=e424]:
+          - button "GER Alemanha 0/20" [ref=e425] [cursor=pointer]:
+            - generic [ref=e426]:
+              - generic [ref=e427]: 🇩🇪
+              - generic [ref=e428]:
+                - generic [ref=e429]: GER
+                - generic [ref=e430]: Alemanha
+            - generic [ref=e431]:
+              - generic [ref=e432]: 0/20
+              - img [ref=e433]
+        - article [ref=e435]:
+          - button "CIV Costa do Marfim 0/20" [ref=e436] [cursor=pointer]:
+            - generic [ref=e437]:
+              - generic [ref=e438]: 🇨🇮
+              - generic [ref=e439]:
+                - generic [ref=e440]: CIV
+                - generic [ref=e441]: Costa do Marfim
+            - generic [ref=e442]:
+              - generic [ref=e443]: 0/20
+              - img [ref=e444]
+        - article [ref=e446]:
+          - button "ECU Equador 0/20" [ref=e447] [cursor=pointer]:
+            - generic [ref=e448]:
+              - generic [ref=e449]: 🇪🇨
+              - generic [ref=e450]:
+                - generic [ref=e451]: ECU
+                - generic [ref=e452]: Equador
+            - generic [ref=e453]:
+              - generic [ref=e454]: 0/20
+              - img [ref=e455]
+        - article [ref=e457]:
+          - button "CUW Curaçao 0/20" [ref=e458] [cursor=pointer]:
+            - generic [ref=e459]:
+              - generic [ref=e460]: 🇨🇼
+              - generic [ref=e461]:
+                - generic [ref=e462]: CUW
+                - generic [ref=e463]: Curaçao
+            - generic [ref=e464]:
+              - generic [ref=e465]: 0/20
+              - img [ref=e466]
+      - region "Grupo F" [ref=e468]:
+        - generic [ref=e469]:
+          - generic [ref=e470]:
+            - generic [ref=e471]: GRUPO
+            - heading "Grupo F" [level=2] [ref=e472]
+          - generic [ref=e473]: 0/80
+        - article [ref=e474]:
+          - button "NED Países Baixos 0/20" [ref=e475] [cursor=pointer]:
+            - generic [ref=e476]:
+              - generic [ref=e477]: 🇳🇱
+              - generic [ref=e478]:
+                - generic [ref=e479]: NED
+                - generic [ref=e480]: Países Baixos
+            - generic [ref=e481]:
+              - generic [ref=e482]: 0/20
+              - img [ref=e483]
+        - article [ref=e485]:
+          - button "JPN Japão 0/20" [ref=e486] [cursor=pointer]:
+            - generic [ref=e487]:
+              - generic [ref=e488]: 🇯🇵
+              - generic [ref=e489]:
+                - generic [ref=e490]: JPN
+                - generic [ref=e491]: Japão
+            - generic [ref=e492]:
+              - generic [ref=e493]: 0/20
+              - img [ref=e494]
+        - article [ref=e496]:
+          - button "TUN Tunísia 0/20" [ref=e497] [cursor=pointer]:
+            - generic [ref=e498]:
+              - generic [ref=e499]: 🇹🇳
+              - generic [ref=e500]:
+                - generic [ref=e501]: TUN
+                - generic [ref=e502]: Tunísia
+            - generic [ref=e503]:
+              - generic [ref=e504]: 0/20
+              - img [ref=e505]
+        - article [ref=e507]:
+          - button "SWE Suécia 0/20" [ref=e508] [cursor=pointer]:
+            - generic [ref=e509]:
+              - generic [ref=e510]: 🇸🇪
+              - generic [ref=e511]:
+                - generic [ref=e512]: SWE
+                - generic [ref=e513]: Suécia
+            - generic [ref=e514]:
+              - generic [ref=e515]: 0/20
+              - img [ref=e516]
+      - region "Grupo G" [ref=e518]:
+        - generic [ref=e519]:
+          - generic [ref=e520]:
+            - generic [ref=e521]: GRUPO
+            - heading "Grupo G" [level=2] [ref=e522]
+          - generic [ref=e523]: 0/80
+        - article [ref=e524]:
+          - button "BEL Bélgica 0/20" [ref=e525] [cursor=pointer]:
+            - generic [ref=e526]:
+              - generic [ref=e527]: 🇧🇪
+              - generic [ref=e528]:
+                - generic [ref=e529]: BEL
+                - generic [ref=e530]: Bélgica
+            - generic [ref=e531]:
+              - generic [ref=e532]: 0/20
+              - img [ref=e533]
+        - article [ref=e535]:
+          - button "EGY Egito 0/20" [ref=e536] [cursor=pointer]:
+            - generic [ref=e537]:
+              - generic [ref=e538]: 🇪🇬
+              - generic [ref=e539]:
+                - generic [ref=e540]: EGY
+                - generic [ref=e541]: Egito
+            - generic [ref=e542]:
+              - generic [ref=e543]: 0/20
+              - img [ref=e544]
+        - article [ref=e546]:
+          - button "IRN Irã 0/20" [ref=e547] [cursor=pointer]:
+            - generic [ref=e548]:
+              - generic [ref=e549]: 🇮🇷
+              - generic [ref=e550]:
+                - generic [ref=e551]: IRN
+                - generic [ref=e552]: Irã
+            - generic [ref=e553]:
+              - generic [ref=e554]: 0/20
+              - img [ref=e555]
+        - article [ref=e557]:
+          - button "NZL Nova Zelândia 0/20" [ref=e558] [cursor=pointer]:
+            - generic [ref=e559]:
+              - generic [ref=e560]: 🇳🇿
+              - generic [ref=e561]:
+                - generic [ref=e562]: NZL
+                - generic [ref=e563]: Nova Zelândia
+            - generic [ref=e564]:
+              - generic [ref=e565]: 0/20
+              - img [ref=e566]
+      - region "Grupo H" [ref=e568]:
+        - generic [ref=e569]:
+          - generic [ref=e570]:
+            - generic [ref=e571]: GRUPO
+            - heading "Grupo H" [level=2] [ref=e572]
+          - generic [ref=e573]: 0/80
+        - article [ref=e574]:
+          - button "ESP Espanha 0/20" [ref=e575] [cursor=pointer]:
+            - generic [ref=e576]:
+              - generic [ref=e577]: 🇪🇸
+              - generic [ref=e578]:
+                - generic [ref=e579]: ESP
+                - generic [ref=e580]: Espanha
+            - generic [ref=e581]:
+              - generic [ref=e582]: 0/20
+              - img [ref=e583]
+        - article [ref=e585]:
+          - button "URU Uruguai 0/20" [ref=e586] [cursor=pointer]:
+            - generic [ref=e587]:
+              - generic [ref=e588]: 🇺🇾
+              - generic [ref=e589]:
+                - generic [ref=e590]: URU
+                - generic [ref=e591]: Uruguai
+            - generic [ref=e592]:
+              - generic [ref=e593]: 0/20
+              - img [ref=e594]
+        - article [ref=e596]:
+          - button "KSA Arábia Saudita 0/20" [ref=e597] [cursor=pointer]:
+            - generic [ref=e598]:
+              - generic [ref=e599]: 🇸🇦
+              - generic [ref=e600]:
+                - generic [ref=e601]: KSA
+                - generic [ref=e602]: Arábia Saudita
+            - generic [ref=e603]:
+              - generic [ref=e604]: 0/20
+              - img [ref=e605]
+        - article [ref=e607]:
+          - button "CPV Cabo Verde 0/20" [ref=e608] [cursor=pointer]:
+            - generic [ref=e609]:
+              - generic [ref=e610]: 🇨🇻
+              - generic [ref=e611]:
+                - generic [ref=e612]: CPV
+                - generic [ref=e613]: Cabo Verde
+            - generic [ref=e614]:
+              - generic [ref=e615]: 0/20
+              - img [ref=e616]
+      - region "Grupo I" [ref=e618]:
+        - generic [ref=e619]:
+          - generic [ref=e620]:
+            - generic [ref=e621]: GRUPO
+            - heading "Grupo I" [level=2] [ref=e622]
+          - generic [ref=e623]: 0/80
+        - article [ref=e624]:
+          - button "FRA França 0/20" [ref=e625] [cursor=pointer]:
+            - generic [ref=e626]:
+              - generic [ref=e627]: 🇫🇷
+              - generic [ref=e628]:
+                - generic [ref=e629]: FRA
+                - generic [ref=e630]: França
+            - generic [ref=e631]:
+              - generic [ref=e632]: 0/20
+              - img [ref=e633]
+        - article [ref=e635]:
+          - button "SEN Senegal 0/20" [ref=e636] [cursor=pointer]:
+            - generic [ref=e637]:
+              - generic [ref=e638]: 🇸🇳
+              - generic [ref=e639]:
+                - generic [ref=e640]: SEN
+                - generic [ref=e641]: Senegal
+            - generic [ref=e642]:
+              - generic [ref=e643]: 0/20
+              - img [ref=e644]
+        - article [ref=e646]:
+          - button "NOR Noruega 0/20" [ref=e647] [cursor=pointer]:
+            - generic [ref=e648]:
+              - generic [ref=e649]: 🇳🇴
+              - generic [ref=e650]:
+                - generic [ref=e651]: NOR
+                - generic [ref=e652]: Noruega
+            - generic [ref=e653]:
+              - generic [ref=e654]: 0/20
+              - img [ref=e655]
+        - article [ref=e657]:
+          - button "IRQ Iraque 0/20" [ref=e658] [cursor=pointer]:
+            - generic [ref=e659]:
+              - generic [ref=e660]: 🇮🇶
+              - generic [ref=e661]:
+                - generic [ref=e662]: IRQ
+                - generic [ref=e663]: Iraque
+            - generic [ref=e664]:
+              - generic [ref=e665]: 0/20
+              - img [ref=e666]
+      - region "Grupo J" [ref=e668]:
+        - generic [ref=e669]:
+          - generic [ref=e670]:
+            - generic [ref=e671]: GRUPO
+            - heading "Grupo J" [level=2] [ref=e672]
+          - generic [ref=e673]: 0/80
+        - article [ref=e674]:
+          - button "ARG Argentina 0/20" [ref=e675] [cursor=pointer]:
+            - generic [ref=e676]:
+              - generic [ref=e677]: 🇦🇷
+              - generic [ref=e678]:
+                - generic [ref=e679]: ARG
+                - generic [ref=e680]: Argentina
+            - generic [ref=e681]:
+              - generic [ref=e682]: 0/20
+              - img [ref=e683]
+        - article [ref=e685]:
+          - button "ALG Argélia 0/20" [ref=e686] [cursor=pointer]:
+            - generic [ref=e687]:
+              - generic [ref=e688]: 🇩🇿
+              - generic [ref=e689]:
+                - generic [ref=e690]: ALG
+                - generic [ref=e691]: Argélia
+            - generic [ref=e692]:
+              - generic [ref=e693]: 0/20
+              - img [ref=e694]
+        - article [ref=e696]:
+          - button "AUT Áustria 0/20" [ref=e697] [cursor=pointer]:
+            - generic [ref=e698]:
+              - generic [ref=e699]: 🇦🇹
+              - generic [ref=e700]:
+                - generic [ref=e701]: AUT
+                - generic [ref=e702]: Áustria
+            - generic [ref=e703]:
+              - generic [ref=e704]: 0/20
+              - img [ref=e705]
+        - article [ref=e707]:
+          - button "JOR Jordânia 0/20" [ref=e708] [cursor=pointer]:
+            - generic [ref=e709]:
+              - generic [ref=e710]: 🇯🇴
+              - generic [ref=e711]:
+                - generic [ref=e712]: JOR
+                - generic [ref=e713]: Jordânia
+            - generic [ref=e714]:
+              - generic [ref=e715]: 0/20
+              - img [ref=e716]
+      - region "Grupo K" [ref=e718]:
+        - generic [ref=e719]:
+          - generic [ref=e720]:
+            - generic [ref=e721]: GRUPO
+            - heading "Grupo K" [level=2] [ref=e722]
+          - generic [ref=e723]: 0/80
+        - article [ref=e724]:
+          - button "POR Portugal 0/20" [ref=e725] [cursor=pointer]:
+            - generic [ref=e726]:
+              - generic [ref=e727]: 🇵🇹
+              - generic [ref=e728]:
+                - generic [ref=e729]: POR
+                - generic [ref=e730]: Portugal
+            - generic [ref=e731]:
+              - generic [ref=e732]: 0/20
+              - img [ref=e733]
+        - article [ref=e735]:
+          - button "COL Colômbia 0/20" [ref=e736] [cursor=pointer]:
+            - generic [ref=e737]:
+              - generic [ref=e738]: 🇨🇴
+              - generic [ref=e739]:
+                - generic [ref=e740]: COL
+                - generic [ref=e741]: Colômbia
+            - generic [ref=e742]:
+              - generic [ref=e743]: 0/20
+              - img [ref=e744]
+        - article [ref=e746]:
+          - button "UZB Uzbequistão 0/20" [ref=e747] [cursor=pointer]:
+            - generic [ref=e748]:
+              - generic [ref=e749]: 🇺🇿
+              - generic [ref=e750]:
+                - generic [ref=e751]: UZB
+                - generic [ref=e752]: Uzbequistão
+            - generic [ref=e753]:
+              - generic [ref=e754]: 0/20
+              - img [ref=e755]
+        - article [ref=e757]:
+          - button "COD RD Congo 0/20" [ref=e758] [cursor=pointer]:
+            - generic [ref=e759]:
+              - generic [ref=e760]: 🇨🇩
+              - generic [ref=e761]:
+                - generic [ref=e762]: COD
+                - generic [ref=e763]: RD Congo
+            - generic [ref=e764]:
+              - generic [ref=e765]: 0/20
+              - img [ref=e766]
+      - region "Grupo L" [ref=e768]:
+        - generic [ref=e769]:
+          - generic [ref=e770]:
+            - generic [ref=e771]: GRUPO
+            - heading "Grupo L" [level=2] [ref=e772]
+          - generic [ref=e773]: 0/80
+        - article [ref=e774]:
+          - button "ENG Inglaterra 0/20" [ref=e775] [cursor=pointer]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+              - generic [ref=e778]:
+                - generic [ref=e779]: ENG
+                - generic [ref=e780]: Inglaterra
+            - generic [ref=e781]:
+              - generic [ref=e782]: 0/20
+              - img [ref=e783]
+        - article [ref=e785]:
+          - button "CRO Croácia 0/20" [ref=e786] [cursor=pointer]:
+            - generic [ref=e787]:
+              - generic [ref=e788]: 🇭🇷
+              - generic [ref=e789]:
+                - generic [ref=e790]: CRO
+                - generic [ref=e791]: Croácia
+            - generic [ref=e792]:
+              - generic [ref=e793]: 0/20
+              - img [ref=e794]
+        - article [ref=e796]:
+          - button "GHA Gana 0/20" [ref=e797] [cursor=pointer]:
+            - generic [ref=e798]:
+              - generic [ref=e799]: 🇬🇭
+              - generic [ref=e800]:
+                - generic [ref=e801]: GHA
+                - generic [ref=e802]: Gana
+            - generic [ref=e803]:
+              - generic [ref=e804]: 0/20
+              - img [ref=e805]
+        - article [ref=e807]:
+          - button "PAN Panamá 0/20" [ref=e808] [cursor=pointer]:
+            - generic [ref=e809]:
+              - generic [ref=e810]: 🇵🇦
+              - generic [ref=e811]:
+                - generic [ref=e812]: PAN
+                - generic [ref=e813]: Panamá
+            - generic [ref=e814]:
+              - generic [ref=e815]: 0/20
+              - img [ref=e816]
+      - region "Exclusivas Coca-Cola" [ref=e818]:
+        - generic [ref=e819]:
+          - generic [ref=e820]:
+            - generic [ref=e821]: NÓS SOMOS
+            - heading "Exclusivas Coca-Cola" [level=2] [ref=e822]
+          - generic [ref=e823]: EXCLUSIVA
+          - generic [ref=e824]: 0/14
+        - generic [ref=e826]:
+          - button "CC_1, Faltante" [ref=e827] [cursor=pointer]:
+            - generic: "1"
+            - generic [ref=e829]:
+              - strong [ref=e830]: CC
+              - generic [ref=e831]: Faltante
+          - button "CC_2, Faltante" [ref=e832] [cursor=pointer]:
+            - generic: "2"
+            - generic [ref=e834]:
+              - strong [ref=e835]: CC
+              - generic [ref=e836]: Faltante
+          - button "CC_3, Faltante" [ref=e837] [cursor=pointer]:
+            - generic: "3"
+            - generic [ref=e839]:
+              - strong [ref=e840]: CC
+              - generic [ref=e841]: Faltante
+          - button "CC_4, Faltante" [ref=e842] [cursor=pointer]:
+            - generic: "4"
+            - generic [ref=e844]:
+              - strong [ref=e845]: CC
+              - generic [ref=e846]: Faltante
+          - button "CC_5, Faltante" [ref=e847] [cursor=pointer]:
+            - generic: "5"
+            - generic [ref=e849]:
+              - strong [ref=e850]: CC
+              - generic [ref=e851]: Faltante
+          - button "CC_6, Faltante" [ref=e852] [cursor=pointer]:
+            - generic: "6"
+            - generic [ref=e854]:
+              - strong [ref=e855]: CC
+              - generic [ref=e856]: Faltante
+          - button "CC_7, Faltante" [ref=e857] [cursor=pointer]:
+            - generic: "7"
+            - generic [ref=e859]:
+              - strong [ref=e860]: CC
+              - generic [ref=e861]: Faltante
+          - button "CC_8, Faltante" [ref=e862] [cursor=pointer]:
+            - generic: "8"
+            - generic [ref=e864]:
+              - strong [ref=e865]: CC
+              - generic [ref=e866]: Faltante
+          - button "CC_9, Faltante" [ref=e867] [cursor=pointer]:
+            - generic: "9"
+            - generic [ref=e869]:
+              - strong [ref=e870]: CC
+              - generic [ref=e871]: Faltante
+          - button "CC_10, Faltante" [ref=e872] [cursor=pointer]:
+            - generic: "10"
+            - generic [ref=e874]:
+              - strong [ref=e875]: CC
+              - generic [ref=e876]: Faltante
+          - button "CC_11, Faltante" [ref=e877] [cursor=pointer]:
+            - generic: "11"
+            - generic [ref=e879]:
+              - strong [ref=e880]: CC
+              - generic [ref=e881]: Faltante
+          - button "CC_12, Faltante" [ref=e882] [cursor=pointer]:
+            - generic: "12"
+            - generic [ref=e884]:
+              - strong [ref=e885]: CC
+              - generic [ref=e886]: Faltante
+          - button "CC_13, Faltante" [ref=e887] [cursor=pointer]:
+            - generic: "13"
+            - generic [ref=e889]:
+              - strong [ref=e890]: CC
+              - generic [ref=e891]: Faltante
+          - button "CC_14, Faltante" [ref=e892] [cursor=pointer]:
+            - generic: "14"
+            - generic [ref=e894]:
+              - strong [ref=e895]: CC
+              - generic [ref=e896]: Faltante
+    - generic [ref=e897]:
+      - heading "—" [level=2] [ref=e899]
+      - generic [ref=e901]:
+        - button "Diminuir quantidade" [ref=e902] [cursor=pointer]:
+          - img [ref=e903]
+        - generic [ref=e904]: "0"
+        - button "Aumentar quantidade" [ref=e905] [cursor=pointer]:
+          - img [ref=e906]
+      - button "Salvar quantidade" [ref=e907] [cursor=pointer]:
+        - img [ref=e908]
+        - text: Salvar quantidade
