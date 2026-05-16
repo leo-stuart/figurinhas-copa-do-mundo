@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useTransition, useMemo } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { CircleCheckBig, Layers, PackageOpen, Search, SearchX, Trash2, X } from 'lucide-react'
 import { resetAllStickers, updateStickerCount } from '@/app/actions/stickers'
 import { GROUPS, TOTAL_STICKERS, fwcCodes, ccCodes, teamCodes } from '@/lib/album-data'
@@ -34,7 +34,7 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
   const [sectionFilter, setSectionFilter] = useState<SectionFilter>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [sheetKey, setSheetKey] = useState<string | null>(null)
-  const [isPending, startTransition] = useTransition()
+  const [busy, setBusy] = useState(false)
 
   const ownedMap = useMemo(() => new Map(Object.entries(owned)), [owned])
   const progress = useMemo(() => progressUseCase.execute(ownedMap, TOTAL_STICKERS), [ownedMap])
@@ -88,7 +88,7 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
     const next = currentCount + 1
     setOwned(o => ({ ...o, [code]: next }))
 
-    startTransition(async () => {
+    void (async () => {
       try {
         const result = await updateStickerCount(code, next)
         if (!result.ok) {
@@ -99,7 +99,7 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
         console.error('[handleTap] network error:', err)
         revert(code, currentCount)
       }
-    })
+    })()
   }, [revert])
 
   const handleResetAll = useCallback(() => {
@@ -108,8 +108,9 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
 
     const snapshot = owned
     setOwned({})
+    setBusy(true)
 
-    startTransition(async () => {
+    void (async () => {
       try {
         const result = await resetAllStickers()
         if (!result.ok) {
@@ -119,8 +120,10 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
       } catch (err) {
         console.error('[handleResetAll] network error:', err)
         setOwned(snapshot)
+      } finally {
+        setBusy(false)
       }
-    })
+    })()
   }, [owned, progress.have])
 
   const handleRemoveDuplicates = useCallback(() => {
@@ -132,8 +135,9 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
       for (const code of duplicateCodes) next[code] = 1
       return next
     })
+    setBusy(true)
 
-    startTransition(async () => {
+    void (async () => {
       try {
         const results = await Promise.all(duplicateCodes.map(code => updateStickerCount(code, 1)))
         if (results.some(r => !r.ok)) {
@@ -143,8 +147,10 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
       } catch (err) {
         console.error('[handleRemoveDuplicates] network error:', err)
         setOwned(snapshot)
+      } finally {
+        setBusy(false)
       }
-    })
+    })()
   }, [duplicateCodes, owned])
 
   const handleSheetUpdate = useCallback((code: string, count: number) => {
@@ -156,14 +162,14 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
     })
     setSheetKey(null)
 
-    startTransition(async () => {
+    void (async () => {
       try {
         const result = await updateStickerCount(code, count)
         if (!result.ok) console.error('[handleSheetUpdate] server error:', result.error)
       } catch (err) {
         console.error('[handleSheetUpdate] network error:', err)
       }
-    })
+    })()
   }, [])
 
   return (
@@ -193,7 +199,7 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
               type="button"
               className="danger-button"
               onClick={handleResetAll}
-              disabled={isPending}
+              disabled={busy}
             >
               <Trash2 size={17} />
               Remover todas
@@ -211,7 +217,7 @@ export default function AlbumClient({ initialStickers, userEmail }: Props) {
               type="button"
               className="danger-button"
               onClick={handleRemoveDuplicates}
-              disabled={isPending}
+              disabled={busy}
             >
               <Trash2 size={17} />
               Remover repetidas
